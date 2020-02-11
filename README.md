@@ -1,1 +1,1 @@
-# IST-242-Team-6-Project
+Team-6
