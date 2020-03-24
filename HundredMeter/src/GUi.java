@@ -27,6 +27,7 @@ public class GUi extends JFrame
 		buttonPanel.add(exit);
 		add(buttonPanel, BorderLayout.SOUTH);
 	}
+	
 	public void InputPanel()
 	{
 		JPanel InputPanel = new JPanel();
@@ -35,6 +36,7 @@ public class GUi extends JFrame
 		InputPanel.add(nameBox);
 		add(InputPanel, BorderLayout.CENTER);
 	}
+	
 	public JTextField textfield()
 	{
 		JTextField textfield = new JTextField();
