@@ -1,8 +1,9 @@
 package MeterDash;
+
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
-
 import javax.swing.*;
+
 public class GUi extends JFrame 
 {
 	private static final int frame_HEIGHT = 400;
