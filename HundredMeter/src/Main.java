@@ -1,4 +1,6 @@
-package MeterDash;
+/*
+ * 
+ */
 
 import javax.swing.JFrame;
 
