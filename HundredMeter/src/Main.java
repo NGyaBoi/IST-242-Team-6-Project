@@ -1,17 +1,17 @@
-/*********************************************************
- *Filename: 		Main.java
- *Author: 			Yifan Feng, Neel Ghosh, Ephrain Govere, Matthew Marone
- *Section:			IST 242.001 / MIS 307.001
- *Assignment:		Project
- *Description:		
- *Date Created:		2/24/2020
- *Date Modified:	3/2/2020
-*********************************************************/
+package MeterDash;
 
-public class Main 
+import javax.swing.JFrame;
+
+public class Main
 {
-	public static void main(String[] args) 
-	{
-		
-	}
+
+	public static void main(String[] args)
+{
+		// TODO Auto-generated method stub
+		GUi frame = new GUi();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setTitle("100 Meter Dash Seach Tool");
+		frame.setVisible(true);
+}
+
 }
