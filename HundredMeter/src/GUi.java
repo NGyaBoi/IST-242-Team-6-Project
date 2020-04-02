@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.*;
 
 public class GUi extends JFrame implements ActionListener
@@ -20,8 +21,13 @@ public class GUi extends JFrame implements ActionListener
 		setTitle("Meter Dash Search Tool");
 		setSize(frame_HEIGHT, frame_WIDTH);
 		
-		String[] athleteNames = {"", "More to be added"}
+		String[] athleteNames = {"", "More to be added"};
 		athletes = new JComboBox(athleteNames);
+		
+		JPanel ComboPanel = new JPanel();
+		ComboPanel.setLayout(new GridLayout(1,1));;
+		ComboPanel.add(athletes);
+		add(ComboPanel, BorderLayout.NORTH);
 		
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.setLayout(new GridLayout(1,3));
@@ -54,4 +60,7 @@ public class GUi extends JFrame implements ActionListener
 		JLabel createlabel = new JLabel(prompt);
 		return createlabel;
 	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {}
 }
