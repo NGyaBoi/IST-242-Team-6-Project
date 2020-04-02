@@ -2,6 +2,8 @@ package MeterDash;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class GUi extends JFrame implements ActionListener
@@ -19,6 +21,7 @@ public class GUi extends JFrame implements ActionListener
 		setSize(frame_HEIGHT, frame_WIDTH);
 		
 		String[] athleteNames = {"", "More to be added"}
+		athletes = new JComboBox(athleteNames);
 		
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.setLayout(new GridLayout(1,3));
@@ -29,7 +32,6 @@ public class GUi extends JFrame implements ActionListener
 		buttonPanel.add(enter);
 		buttonPanel.add(exit);
 		add(buttonPanel, BorderLayout.SOUTH);
-		athletes = new JComboBox(athleteName);
 	}
 	
 	public void InputPanel()
