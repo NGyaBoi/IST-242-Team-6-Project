@@ -10,12 +10,15 @@ public class GUi extends JFrame implements ActionListener
 	private static final int frame_WIDTH = 300;
 	JLabel lblSearchBar = createlabel("Please enter the athlete.");
 	JTextField txtName = textfield();
+	JComboBox athletes;
 
 	public GUi()
 	{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setTitle("Meter Dash Seach Tool");
+		setTitle("Meter Dash Search Tool");
 		setSize(frame_HEIGHT, frame_WIDTH);
+		
+		String[] athleteNames = {"", "More to be added"}
 		
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.setLayout(new GridLayout(1,3));
@@ -26,6 +29,7 @@ public class GUi extends JFrame implements ActionListener
 		buttonPanel.add(enter);
 		buttonPanel.add(exit);
 		add(buttonPanel, BorderLayout.SOUTH);
+		athletes = new JComboBox(athleteName);
 	}
 	
 	public void InputPanel()
