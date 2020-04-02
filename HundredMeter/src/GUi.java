@@ -4,7 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import javax.swing.*;
 
-public class GUi extends JFrame 
+public class GUi extends JFrame implements ActionListener
 {
 	private static final int frame_HEIGHT = 400;
 	private static final int frame_WIDTH = 300;
