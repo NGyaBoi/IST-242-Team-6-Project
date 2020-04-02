@@ -8,7 +8,7 @@ public class GUi extends JFrame
 {
 	private static final int frame_HEIGHT = 400;
 	private static final int frame_WIDTH = 300;
-	JLabel lblSearchBar = createlabel("Please enter the athlethe.");
+	JLabel lblSearchBar = createlabel("Please enter the athlete.");
 	JTextField txtName = textfield();
 
 	public GUi()
