@@ -1,8 +1,0 @@
-Bolt,Usain,Jamaica,9.81,1,
-Gatlin,Justin,USA,9.89,2,
-De Grasse,Andre,Canada,9.91,3,
-Blake,Yohan,Jamaica,9.93,4,
-Simbine,Akani,South Africa,9.94,5,
-Meite,Ben Youssef,Ivory Coast,9.96,6,
-Vicaut,Jimmy,France,10.04,7,
-Bromell,Trayvon,USA,10.06,8
