@@ -1,3 +1,4 @@
+package MeterDash;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -19,7 +20,7 @@ public class GUi extends JFrame implements ActionListener
 		setTitle("Meter Dash Search Tool");
 		setSize(frame_HEIGHT, frame_WIDTH);
 		
-		String[] athleteNames = {"", "More to be added"};
+		String[] athleteNames = {"Please Select ", "Usain Bolt", "Justin Gatlin", "Andre De Grasse", "Yohan Blake", "Akani Simbine", "Ben Youssef Meite", "Jimmy Vicaut", "Trayvon Bromell"};
 		athletes = new JComboBox(athleteNames);
 		
 		JPanel ComboPanel = new JPanel();
