@@ -2,9 +2,9 @@
  * 
  */
 
-import javax.swing.JFrame;
+package MeterDash;
 
-import MeterDash.GUi;
+import javax.swing.JFrame;
 
 public class Main
 {
