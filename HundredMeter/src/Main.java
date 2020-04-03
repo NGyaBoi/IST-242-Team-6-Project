@@ -4,6 +4,8 @@
 
 import javax.swing.JFrame;
 
+import MeterDash.GUi;
+
 public class Main
 {
 	public static void main(String[] args)
