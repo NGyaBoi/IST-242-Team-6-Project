@@ -1,5 +1,4 @@
 package MeterDash;
-
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -7,14 +6,15 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-public class GUi extends JFrame implements ActionListener
+
+public class GUi extends JFrame 
 {
 	private static final int frame_HEIGHT = 400;
 	private static final int frame_WIDTH = 300;
-	JLabel lblSearchBar = createlabel("Please enter the athlete.");
+	JLabel lblSearchBar = createlabel("Choose an athlete");
 	JTextField txtName = textfield();
 	JComboBox athletes;
-
+	boolean pointer = false;
 	public GUi()
 	{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -26,6 +26,7 @@ public class GUi extends JFrame implements ActionListener
 		
 		JPanel ComboPanel = new JPanel();
 		ComboPanel.setLayout(new GridLayout(1,1));;
+		ComboPanel.add(lblSearchBar);
 		ComboPanel.add(athletes);
 		add(ComboPanel, BorderLayout.NORTH);
 		
@@ -38,6 +39,14 @@ public class GUi extends JFrame implements ActionListener
 		buttonPanel.add(enter);
 		buttonPanel.add(exit);
 		add(buttonPanel, BorderLayout.SOUTH);
+		do 
+		{
+			
+			ButtonListener listener = new ButtonListener();
+			exit.addActionListener(listener);
+			clear.addActionListener(listener);
+			enter.addActionListener(listener);
+		}while(pointer);
 	}
 	
 	public void InputPanel()
@@ -61,6 +70,20 @@ public class GUi extends JFrame implements ActionListener
 		return createlabel;
 	}
 
-	@Override
-	public void actionPerformed(ActionEvent e) {}
+
+	class ButtonListener implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+			{
+				switch(e.getActionCommand())
+				{
+					case "Clear":
+					athletes.setSelectedIndex(0);
+					break;
+					case "Exit":
+					System.exit(0);
+					break;
+				}
+			}
+	}
 }
