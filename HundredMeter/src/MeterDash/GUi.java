@@ -15,6 +15,7 @@ public class GUi extends JFrame
 	JTextField txtName = textfield();
 	JComboBox athletes;
 	boolean pointer = false;
+	
 	public GUi()
 	{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
