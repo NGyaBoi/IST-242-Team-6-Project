@@ -13,8 +13,16 @@ public class GUi extends JFrame
 	private static final int frame_HEIGHT = 400;
 	private static final int frame_WIDTH = 300;
 	JLabel lblSearchBar = createlabel("Choose an athlete");
-	JTextField txtName = textfield();
 	JComboBox athletes;
+	
+	JCheckBox FirstName = new JCheckBox("Display the Runner's First Name", true);
+	JCheckBox LastName = new JCheckBox("Display the Runner's Last Name", true);
+	JCheckBox Nation = new JCheckBox("Display the Runner's Nation of Origin", true);
+	JCheckBox LaneNumber = new JCheckBox("Display the Lane Number", true);
+	JCheckBox ReactionTime = new JCheckBox("Display the Runner's Reaction Time", true);
+	JCheckBox FinishTime = new JCheckBox("Display the Finishing Time", true);
+	JCheckBox Ranking = new JCheckBox("Display the Runner's Ranking", true);
+	
 	boolean pointer = false;
 	
 	public GUi() throws FileNotFoundException
@@ -35,15 +43,8 @@ public class GUi extends JFrame
 		add(ComboPanel, BorderLayout.NORTH);
 		
 		JPanel CheckPanel = new JPanel();
-		//CheckPanel.setLayou);
 		CheckPanel.setLayout(new GridLayout(7,1));
-		JCheckBox FirstName = new JCheckBox("Display the Runner's First Name", false);
-		JCheckBox LastName = new JCheckBox("Display the Runner's Last Name", false);
-		JCheckBox Nation = new JCheckBox("Display the Runner's Nation of Origin", false);
-		JCheckBox LaneNumber = new JCheckBox("Display the Lane Number", false);
-		JCheckBox ReactionTime = new JCheckBox("Display the Runner's Reaction Time", false);
-		JCheckBox FinishTime = new JCheckBox("Display the Finishing Time", false);
-		JCheckBox Ranking = new JCheckBox("Display the Runner's Ranking", false);
+		
 		CheckPanel.add(FirstName);
 		CheckPanel.add(LastName);
 		CheckPanel.add(Nation);
@@ -109,33 +110,43 @@ public class GUi extends JFrame
 		double dFinishTime;
 		int intRankingNumber;
 		
+		
+		
 		do
 		{
+			if(LastName.isSelected()==true) {
 			strLastName = Results.next();
-			System.out.println(strLastName);
+			System.out.println(strLastName);}
 			
+			if(FirstName.isSelected()==true) {
 			strFirstName = Results.next();
-			System.out.println(strFirstName);
+			System.out.println(strFirstName);}
 			
+			if(Nation.isSelected()==true) {
 			strNation = Results.next();
-			System.out.println(strNation);
+			System.out.println(strNation);}
 			
+			if(LaneNumber.isSelected()==true) {
 			intLaneNumber = Integer.parseInt(Results.next());
-			System.out.println(intLaneNumber);
+			System.out.println(intLaneNumber);}
 			
+			if(ReactionTime.isSelected()==true) {
 			dReactionTime = Double.parseDouble(Results.next());
-			System.out.println(dReactionTime);
+			System.out.println(dReactionTime);}
 			
+			if(FinishTime.isSelected()==true) {
 			dFinishTime = Double.parseDouble(Results.next());
-			System.out.println(dFinishTime);
+			System.out.println(dFinishTime);}
 			
+			if(Ranking.isSelected()==true) {
 			intRankingNumber = Integer.parseInt(Results.next());
-			System.out.println(intRankingNumber);
+			System.out.println(intRankingNumber);}
 			
 		} while (Results.hasNext(","));
 			
 			
 	}
+	//public void 
 	
 	class ButtonListener implements ActionListener
 	{
