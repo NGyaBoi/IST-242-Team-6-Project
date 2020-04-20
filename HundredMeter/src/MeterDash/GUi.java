@@ -3,9 +3,10 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.*;
-
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.*;
 
 public class GUi extends JFrame 
 {
@@ -18,6 +19,8 @@ public class GUi extends JFrame
 	
 	public GUi()
 	{
+		Scanner console = new Scanner(System.in);
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("Meter Dash Search Tool");
 		setSize(frame_HEIGHT, frame_WIDTH);
@@ -40,14 +43,14 @@ public class GUi extends JFrame
 		buttonPanel.add(enter);
 		buttonPanel.add(exit);
 		add(buttonPanel, BorderLayout.SOUTH);
+		
 		do 
 		{
-			
 			ButtonListener listener = new ButtonListener();
 			exit.addActionListener(listener);
 			clear.addActionListener(listener);
 			enter.addActionListener(listener);
-		}while(pointer);
+		} while(pointer);
 	}
 	
 	public void InputPanel()
@@ -71,7 +74,36 @@ public class GUi extends JFrame
 		return createlabel;
 	}
 
-
+	public void ReadResultsFile(String Name)
+	{
+		String FileName = Name;
+		FileName += ".txt";
+		Scanner Results = new Scanner("Usain Bolt.txt");
+		
+		Results.useDelimiter(",");
+		String strLastName;
+		String strFirstName;
+		String strNation;
+		int intLaneNumber;
+		double dReactionTime;
+		double dFinishTime;
+		int intRankingNumber;
+		
+		while(Results.hasNext())
+		{
+			strLastName = Results.next();
+			strFirstName = Results.next();
+			strNation = Results.next();
+			intLaneNumber = Integer.parseInt(Results.next());
+			dReactionTime = Double.parseDouble(Results.next());
+			dFinishTime = Double.parseDouble(Results.next());
+			intRankingNumber = Integer.parseInt(Results.next());
+			
+			System.out.println(strLastName);
+			
+		}
+	}// catch (FileNotFoundException e) {}
+	
 	class ButtonListener implements ActionListener
 	{
 		public void actionPerformed(ActionEvent e)
@@ -84,6 +116,9 @@ public class GUi extends JFrame
 					case "Exit":
 					System.exit(0);
 					break;
+					case "Enter":
+					ReadResultsFile((String)athletes.getSelectedItem());
+					
 				}
 			}
 	}
