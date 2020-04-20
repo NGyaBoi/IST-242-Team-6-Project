@@ -76,49 +76,45 @@ public class GUi extends JFrame
 
 	public void ReadResultsFile(String Name) throws FileNotFoundException
 	{
-		if(Name == "Please Select")
-			System.out.println("Please select a runner first");
-		else
+		String FileName = Name;
+		FileName += ".txt";
+		File toRead = new File(FileName);
+		Scanner Results = new Scanner(toRead);
+		
+		Results.useDelimiter(",");
+		String strLastName = "";
+		String strFirstName;
+		String strNation;
+		int intLaneNumber;
+		double dReactionTime;
+		double dFinishTime;
+		int intRankingNumber;
+		
+		do
 		{
-			String FileName = Name;
-			FileName += ".txt";
-			File toRead = new File(FileName);
-			Scanner Results = new Scanner(toRead);
-		
-			Results.useDelimiter(",");
-			String strLastName = "";
-			String strFirstName;
-			String strNation;
-			int intLaneNumber;
-			double dReactionTime;
-			double dFinishTime;
-			int intRankingNumber;
-		
-			do
-			{
-				strLastName = Results.next();
-				System.out.println(strLastName);
+			strLastName = Results.next();
+			System.out.println(strLastName);
 			
-				strFirstName = Results.next();
-				System.out.println(strFirstName);
+			strFirstName = Results.next();
+			System.out.println(strFirstName);
 			
-				strNation = Results.next();
-				System.out.println(strNation);
+			strNation = Results.next();
+			System.out.println(strNation);
 			
-				intLaneNumber = Integer.parseInt(Results.next());
-				System.out.println(intLaneNumber);
+			intLaneNumber = Integer.parseInt(Results.next());
+			System.out.println(intLaneNumber);
 			
-				dReactionTime = Double.parseDouble(Results.next());
-				System.out.println(dReactionTime);
+			dReactionTime = Double.parseDouble(Results.next());
+			System.out.println(dReactionTime);
 			
-				dFinishTime = Double.parseDouble(Results.next());
-				System.out.println(dFinishTime);
+			dFinishTime = Double.parseDouble(Results.next());
+			System.out.println(dFinishTime);
 			
-				intRankingNumber = Integer.parseInt(Results.next());
-				System.out.println(intRankingNumber);
+			intRankingNumber = Integer.parseInt(Results.next());
+			System.out.println(intRankingNumber);
 			
-			} while (Results.hasNext(","));
-		}	
+		} while (Results.hasNext(","));
+			
 			
 	}
 	
@@ -135,10 +131,14 @@ public class GUi extends JFrame
 					System.exit(0);
 					break;
 					case "Enter":
-					try {
-					ReadResultsFile((String)athletes.getSelectedItem());
-					} catch (FileNotFoundException e1) {e1.printStackTrace();}
-					break;
+					if(athletes.getSelectedIndex()==0) {
+						System.out.println("Please select a runner first");
+						break;}
+					else {
+						try {
+							ReadResultsFile((String)athletes.getSelectedItem());
+						} catch (FileNotFoundException e1) {e1.printStackTrace();}
+						break;}
 					
 				}
 			}
