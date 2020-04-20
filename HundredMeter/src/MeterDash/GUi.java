@@ -110,37 +110,49 @@ public class GUi extends JFrame
 		double dFinishTime;
 		int intRankingNumber;
 		
-		
-		
 		do
 		{
-			if(LastName.isSelected()==true) {
+			if(LastName.isSelected()==true)
+			{
 			strLastName = Results.next();
-			System.out.println(strLastName);}
+			System.out.println(strLastName);
+			}
 			
-			if(FirstName.isSelected()==true) {
+			if(FirstName.isSelected()==true)
+			{
 			strFirstName = Results.next();
-			System.out.println(strFirstName);}
+			System.out.println(strFirstName);
+			}
 			
-			if(Nation.isSelected()==true) {
+			if(Nation.isSelected()==true)
+			{
 			strNation = Results.next();
-			System.out.println(strNation);}
+			System.out.println(strNation);
+			}
 			
-			if(LaneNumber.isSelected()==true) {
+			if(LaneNumber.isSelected()==true)
+			{
 			intLaneNumber = Integer.parseInt(Results.next());
-			System.out.println(intLaneNumber);}
+			System.out.println(intLaneNumber);
+			}
 			
-			if(ReactionTime.isSelected()==true) {
+			if(ReactionTime.isSelected()==true)
+			{
 			dReactionTime = Double.parseDouble(Results.next());
-			System.out.println(dReactionTime);}
+			System.out.println(dReactionTime);
+			}
 			
-			if(FinishTime.isSelected()==true) {
+			if(FinishTime.isSelected()==true)
+			{
 			dFinishTime = Double.parseDouble(Results.next());
-			System.out.println(dFinishTime);}
+			System.out.println(dFinishTime);
+			}
 			
-			if(Ranking.isSelected()==true) {
+			if(Ranking.isSelected()==true)
+			{
 			intRankingNumber = Integer.parseInt(Results.next());
-			System.out.println(intRankingNumber);}
+			System.out.println(intRankingNumber);
+			}
 			
 		} while (Results.hasNext(","));
 			
