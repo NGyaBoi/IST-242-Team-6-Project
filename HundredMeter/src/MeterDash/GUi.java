@@ -74,11 +74,10 @@ public class GUi extends JFrame
 		return createlabel;
 	}
 
-	public void ReadResultsFile(String Name)
+	public void ReadResultsFile(String Name) throws FileNotFoundException
 	{
-		String FileName = Name;
-		FileName += ".txt";
-		Scanner Results = new Scanner("Usain Bolt.txt");
+		File toRead = new File("Usain Bolt.txt");
+		Scanner Results = new Scanner(toRead);
 		
 		Results.useDelimiter(",");
 		String strLastName = "";
@@ -89,19 +88,33 @@ public class GUi extends JFrame
 		double dFinishTime;
 		int intRankingNumber;
 		
-		while(Results.hasNext(","))
+		do
 		{
 			strLastName = Results.next();
-			strFirstName = Results.next();
-			strNation = Results.next();
-			intLaneNumber = Integer.parseInt(Results.next());
-			dReactionTime = Double.parseDouble(Results.next());
-			dFinishTime = Double.parseDouble(Results.next());
-			intRankingNumber = Integer.parseInt(Results.next());
-		}	
 			System.out.println(strLastName);
-
-	}// catch (FileNotFoundException e) {}
+			
+			strFirstName = Results.next();
+			System.out.println(strFirstName);
+			
+			strNation = Results.next();
+			System.out.println(strNation);
+			
+			intLaneNumber = Integer.parseInt(Results.next());
+			System.out.println(intLaneNumber);
+			
+			dReactionTime = Double.parseDouble(Results.next());
+			System.out.println(dReactionTime);
+			
+			dFinishTime = Double.parseDouble(Results.next());
+			System.out.println(dFinishTime);
+			
+			intRankingNumber = Integer.parseInt(Results.next());
+			System.out.println(intRankingNumber);
+			
+		} while (Results.hasNext(","));
+			
+			
+	}
 	
 	class ButtonListener implements ActionListener
 	{
@@ -116,7 +129,10 @@ public class GUi extends JFrame
 					System.exit(0);
 					break;
 					case "Enter":
+					try {
 					ReadResultsFile((String)athletes.getSelectedItem());
+					} catch (FileNotFoundException e1) {e1.printStackTrace();}
+					break;
 					
 				}
 			}
