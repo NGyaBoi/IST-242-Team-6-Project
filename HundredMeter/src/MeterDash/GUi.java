@@ -34,6 +34,25 @@ public class GUi extends JFrame
 		ComboPanel.add(athletes);
 		add(ComboPanel, BorderLayout.NORTH);
 		
+		JPanel CheckPanel = new JPanel();
+		//CheckPanel.setLayou);
+		CheckPanel.setLayout(new GridLayout(7,1));
+		JCheckBox FirstName = new JCheckBox("Display the Runner's First Name", false);
+		JCheckBox LastName = new JCheckBox("Display the Runner's Last Name", false);
+		JCheckBox Nation = new JCheckBox("Display the Runner's Nation of Origin", false);
+		JCheckBox LaneNumber = new JCheckBox("Display the Lane Number", false);
+		JCheckBox ReactionTime = new JCheckBox("Display the Runner's Reaction Time", false);
+		JCheckBox FinishTime = new JCheckBox("Display the Finishing Time", false);
+		JCheckBox Ranking = new JCheckBox("Display the Runner's Ranking", false);
+		CheckPanel.add(FirstName);
+		CheckPanel.add(LastName);
+		CheckPanel.add(Nation);
+		CheckPanel.add(LaneNumber);
+		CheckPanel.add(ReactionTime);
+		CheckPanel.add(FinishTime);
+		CheckPanel.add(Ranking);
+		add(CheckPanel,BorderLayout.WEST);
+		
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.setLayout(new GridLayout(1,3));
 		JButton enter = new JButton("Enter");
@@ -131,7 +150,7 @@ public class GUi extends JFrame
 					System.exit(0);
 					break;
 					case "Enter":
-					if(athletes.getSelectedIndex()==0) {
+					if(athletes.getSelectedIndex() == 0) {
 						System.out.println("Please select a runner first");
 						break;}
 					else {
