@@ -76,7 +76,9 @@ public class GUi extends JFrame
 
 	public void ReadResultsFile(String Name) throws FileNotFoundException
 	{
-		File toRead = new File("Usain Bolt.txt");
+		String FileName = Name;
+		FileName += ".txt";
+		File toRead = new File(FileName);
 		Scanner Results = new Scanner(toRead);
 		
 		Results.useDelimiter(",");
