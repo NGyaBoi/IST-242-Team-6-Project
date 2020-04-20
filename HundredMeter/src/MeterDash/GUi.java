@@ -17,7 +17,7 @@ public class GUi extends JFrame
 	JComboBox athletes;
 	boolean pointer = false;
 	
-	public GUi()
+	public GUi() throws FileNotFoundException
 	{
 		Scanner console = new Scanner(System.in);
 		
@@ -81,7 +81,7 @@ public class GUi extends JFrame
 		Scanner Results = new Scanner("Usain Bolt.txt");
 		
 		Results.useDelimiter(",");
-		String strLastName;
+		String strLastName = "";
 		String strFirstName;
 		String strNation;
 		int intLaneNumber;
@@ -89,7 +89,7 @@ public class GUi extends JFrame
 		double dFinishTime;
 		int intRankingNumber;
 		
-		while(Results.hasNext())
+		while(Results.hasNext(","))
 		{
 			strLastName = Results.next();
 			strFirstName = Results.next();
@@ -98,10 +98,9 @@ public class GUi extends JFrame
 			dReactionTime = Double.parseDouble(Results.next());
 			dFinishTime = Double.parseDouble(Results.next());
 			intRankingNumber = Integer.parseInt(Results.next());
-			
+		}	
 			System.out.println(strLastName);
-			
-		}
+
 	}// catch (FileNotFoundException e) {}
 	
 	class ButtonListener implements ActionListener
