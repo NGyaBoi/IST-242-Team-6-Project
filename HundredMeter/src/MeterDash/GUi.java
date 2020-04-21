@@ -18,13 +18,13 @@ public class GUi extends JFrame
 	JComboBox athletes;
 	
 	//Declares check boxes
-	JCheckBox FirstName = new JCheckBox("Display the Runner's First Name", true);
-	JCheckBox LastName = new JCheckBox("Display the Runner's Last Name", true);
-	JCheckBox Nation = new JCheckBox("Display the Runner's Nation of Origin", true);
-	JCheckBox LaneNumber = new JCheckBox("Display the Lane Number", true);
-	JCheckBox ReactionTime = new JCheckBox("Display the Runner's Reaction Time", true);
-	JCheckBox FinishTime = new JCheckBox("Display the Finishing Time", true);
-	JCheckBox Ranking = new JCheckBox("Display the Runner's Ranking", true);
+	public static JCheckBox FirstName = new JCheckBox("Display the Runner's First Name", true);
+	public static JCheckBox LastName = new JCheckBox("Display the Runner's Last Name", true);
+	public static JCheckBox Nation = new JCheckBox("Display the Runner's Nation of Origin", true);
+	public static JCheckBox LaneNumber = new JCheckBox("Display the Lane Number", true);
+	public static JCheckBox ReactionTime = new JCheckBox("Display the Runner's Reaction Time", true);
+	public static JCheckBox FinishTime = new JCheckBox("Display the Finishing Time", true);
+	public static JCheckBox Ranking = new JCheckBox("Display the Runner's Ranking", true);
 	
 	boolean pointer = false;
 	
@@ -125,33 +125,10 @@ public class GUi extends JFrame
 	
 		} while (Results.hasNext(","));
 		
-		Output(strLastName,strFirstName,strNation,intLaneNumber,dReactionTime,dFinishTime,intRankingNumber);
-	}
-	
-	public void Output(String strLastName, String strFirstName,	String strNation, int intLaneNumber, double dReactionTime, double dFinishTime, int intRankingNumber)
-	{
-		if(LastName.isSelected()==true)
-			System.out.println(strLastName);
-		
-		if(FirstName.isSelected()==true)
-			System.out.println(strFirstName);
-		
-		if(Nation.isSelected()==true)
-			System.out.println(strNation);
-		
-		if(LaneNumber.isSelected()==true)
-			System.out.println(intLaneNumber);
-		
-		if(ReactionTime.isSelected()==true)
-			System.out.println(dReactionTime);
-		
-		if(FinishTime.isSelected()==true)
-			System.out.println(dFinishTime);
-		
-		
-		if(Ranking.isSelected()==true)
-			System.out.println(intRankingNumber);
-
+		DisplayGUI displayFrame = new DisplayGUI(strFirstName, strLastName, strNation, intRankingNumber, dReactionTime, dFinishTime, intRankingNumber);
+		displayFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		displayFrame.setTitle("Displaying Information");
+		displayFrame.setVisible(true);
 	}
 	
 	class ButtonListener implements ActionListener
@@ -175,7 +152,6 @@ public class GUi extends JFrame
 							ReadResultsFile((String)athletes.getSelectedItem());
 						} catch (FileNotFoundException e1) {e1.printStackTrace();}
 						break;}
-					
 				}
 			}
 	}
