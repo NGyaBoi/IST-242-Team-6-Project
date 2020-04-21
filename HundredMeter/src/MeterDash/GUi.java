@@ -88,19 +88,13 @@ public class GUi extends JFrame
 		InputPanel.add(nameBox);
 		add(InputPanel, BorderLayout.CENTER);
 	}
-	
-	public JTextField textfield()
-	{
-		JTextField textfield = new JTextField();
-		return textfield;
-	}
-	
+
 	public JLabel createlabel(String prompt)
 	{
 		JLabel createlabel = new JLabel(prompt);
 		return createlabel;
 	}
-
+	
 	public void ReadResultsFile(String Name) throws FileNotFoundException
 	{
 		String FileName = Name;
@@ -137,39 +131,27 @@ public class GUi extends JFrame
 	public void Output(String strLastName, String strFirstName,	String strNation, int intLaneNumber, double dReactionTime, double dFinishTime, int intRankingNumber)
 	{
 		if(LastName.isSelected()==true)
-		{
 			System.out.println(strLastName);
-		}
 		
 		if(FirstName.isSelected()==true)
-		{
 			System.out.println(strFirstName);
-		}
 		
 		if(Nation.isSelected()==true)
-		{
 			System.out.println(strNation);
-		}
 		
 		if(LaneNumber.isSelected()==true)
-		{
 			System.out.println(intLaneNumber);
-		}
 		
 		if(ReactionTime.isSelected()==true)
-		{
 			System.out.println(dReactionTime);
-		}
 		
 		if(FinishTime.isSelected()==true)
-		{
 			System.out.println(dFinishTime);
-		}
+		
 		
 		if(Ranking.isSelected()==true)
-		{
 			System.out.println(intRankingNumber);
-		}
+
 	}
 	
 	class ButtonListener implements ActionListener
