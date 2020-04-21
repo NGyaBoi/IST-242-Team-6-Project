@@ -121,52 +121,56 @@ public class GUi extends JFrame
 		//Finds checked boxes and prints results
 		do
 		{
-			if(LastName.isSelected()==true)
-			{
 			strLastName = Results.next();
-			System.out.println(strLastName);
-			}
-			
-			if(FirstName.isSelected()==true)
-			{
 			strFirstName = Results.next();
-			System.out.println(strFirstName);
-			}
-			
-			if(Nation.isSelected()==true)
-			{
 			strNation = Results.next();
-			System.out.println(strNation);
-			}
-			
-			if(LaneNumber.isSelected()==true)
-			{
 			intLaneNumber = Integer.parseInt(Results.next());
-			System.out.println(intLaneNumber);
-			}
-			
-			if(ReactionTime.isSelected()==true)
-			{
 			dReactionTime = Double.parseDouble(Results.next());
-			System.out.println(dReactionTime);
-			}
-			
-			if(FinishTime.isSelected()==true)
-			{
 			dFinishTime = Double.parseDouble(Results.next());
-			System.out.println(dFinishTime);
-			}
-			
-			if(Ranking.isSelected()==true)
-			{
 			intRankingNumber = Integer.parseInt(Results.next());
-			System.out.println(intRankingNumber);
-			}
-			
+	
 		} while (Results.hasNext(","));
 		
+		Output(strLastName,strFirstName,strNation,intLaneNumber,dReactionTime,dFinishTime,intRankingNumber);
 	}
-	//public void 
+	
+	public void Output(String strLastName, String strFirstName,	String strNation, int intLaneNumber, double dReactionTime, double dFinishTime, int intRankingNumber)
+	{
+		if(LastName.isSelected()==true)
+		{
+			System.out.println(strLastName);
+		}
+		
+		if(FirstName.isSelected()==true)
+		{
+			System.out.println(strFirstName);
+		}
+		
+		if(Nation.isSelected()==true)
+		{
+			System.out.println(strNation);
+		}
+		
+		if(LaneNumber.isSelected()==true)
+		{
+			System.out.println(intLaneNumber);
+		}
+		
+		if(ReactionTime.isSelected()==true)
+		{
+			System.out.println(dReactionTime);
+		}
+		
+		if(FinishTime.isSelected()==true)
+		{
+			System.out.println(dFinishTime);
+		}
+		
+		if(Ranking.isSelected()==true)
+		{
+			System.out.println(intRankingNumber);
+		}
+	}
 	
 	class ButtonListener implements ActionListener
 	{
