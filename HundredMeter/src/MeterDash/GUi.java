@@ -10,11 +10,14 @@ import java.util.*;
 
 public class GUi extends JFrame 
 {
+	//Formats height and width of GUI
 	private static final int frame_HEIGHT = 400;
 	private static final int frame_WIDTH = 300;
+	
 	JLabel lblSearchBar = createlabel("Choose an athlete");
 	JComboBox athletes;
 	
+	//Declares check boxes
 	JCheckBox FirstName = new JCheckBox("Display the Runner's First Name", true);
 	JCheckBox LastName = new JCheckBox("Display the Runner's Last Name", true);
 	JCheckBox Nation = new JCheckBox("Display the Runner's Nation of Origin", true);
@@ -36,6 +39,7 @@ public class GUi extends JFrame
 		String[] athleteNames = {"Please Select ", "Usain Bolt", "Justin Gatlin", "Andre De Grasse", "Yohan Blake", "Akani Simbine", "Ben Youssef Meite", "Jimmy Vicaut", "Trayvon Bromell"};
 		athletes = new JComboBox(athleteNames);
 		
+		//Declares new combo box panel
 		JPanel ComboPanel = new JPanel();
 		ComboPanel.setLayout(new GridLayout(1,1));;
 		ComboPanel.add(lblSearchBar);
@@ -45,6 +49,7 @@ public class GUi extends JFrame
 		JPanel CheckPanel = new JPanel();
 		CheckPanel.setLayout(new GridLayout(7,1));
 		
+		//Adds new check boxes
 		CheckPanel.add(FirstName);
 		CheckPanel.add(LastName);
 		CheckPanel.add(Nation);
@@ -54,6 +59,7 @@ public class GUi extends JFrame
 		CheckPanel.add(Ranking);
 		add(CheckPanel,BorderLayout.WEST);
 		
+		//Declares GUI buttons
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.setLayout(new GridLayout(1,3));
 		JButton enter = new JButton("Enter");
@@ -64,6 +70,7 @@ public class GUi extends JFrame
 		buttonPanel.add(exit);
 		add(buttonPanel, BorderLayout.SOUTH);
 		
+		//button listener
 		do 
 		{
 			ButtonListener listener = new ButtonListener();
@@ -101,6 +108,7 @@ public class GUi extends JFrame
 		File toRead = new File(FileName);
 		Scanner Results = new Scanner(toRead);
 		
+		//Declarations
 		Results.useDelimiter(",");
 		String strLastName = "";
 		String strFirstName;
@@ -110,6 +118,7 @@ public class GUi extends JFrame
 		double dFinishTime;
 		int intRankingNumber;
 		
+		//Finds checked boxes and prints results
 		do
 		{
 			if(LastName.isSelected()==true)
@@ -155,8 +164,7 @@ public class GUi extends JFrame
 			}
 			
 		} while (Results.hasNext(","));
-			
-			
+		
 	}
 	//public void 
 	
