@@ -11,12 +11,17 @@ import java.util.*;
 
 import MeterDash.DisplayGUI.ButtonListener;
 
-
 public class DisplayGUI extends JFrame
 {
-	JLabel lblFirstName, lblLastName, lblNation, lblLaneNumber, lblReactionTime, lblFinishTime, lblRanking, lblVoid;
-	JLabel displayFirstName, displayLastName, displayNation, displayLaneNumber, displayReactionTime, displayFinishTime, displayRanking;
+	//declares category labels
+	JLabel lblFirstName, lblLastName, lblNation, lblLaneNumber,
+	lblReactionTime, lblFinishTime, lblRanking, lblVoid;
 	
+	//declares displayed information
+	JLabel displayFirstName, displayLastName, displayNation,
+	displayLaneNumber, displayReactionTime, displayFinishTime, displayRanking;
+	
+	//formats height and width of displayGUI
 	private static final int frame_HEIGHT = 400;
 	private static final int frame_WIDTH = 400;
 	
@@ -28,6 +33,7 @@ public class DisplayGUI extends JFrame
 		setTitle("Displaying Information");
 		setSize(frame_HEIGHT, frame_WIDTH);
 		
+		//constructs labels
 		lblFirstName = new JLabel("First Name:");	
 		lblLastName = new JLabel("Last Name:");
 		lblNation = new JLabel("Nation:");
@@ -37,7 +43,7 @@ public class DisplayGUI extends JFrame
 		lblRanking = new JLabel("Ranking:");
 		lblVoid = new JLabel("");
 		
-		
+		//constructs displayed information
 		this.displayFirstName = new JLabel(FirstName);	
 		this.displayLastName = new JLabel(LastName);
 		this.displayNation = new JLabel(Nation);
@@ -46,12 +52,13 @@ public class DisplayGUI extends JFrame
 		this.displayFinishTime = new JLabel(Double.toString(FinishingTime));
 		this.displayRanking = new JLabel(Integer.toString(Ranking));
 		
+		//sets panel layout
 		JPanel ComboPanel = new JPanel();
 		ComboPanel.setLayout(new GridLayout(7,1));;
-		
 		JPanel DisplayPanel = new JPanel();
 		DisplayPanel.setLayout(new GridLayout(7,1));;
 		
+		//border layout
 		add(DisplayPanel, BorderLayout.EAST);
 		add(ComboPanel, BorderLayout.WEST);
 		
@@ -99,6 +106,7 @@ public class DisplayGUI extends JFrame
 		buttonPanel.add(exit);
 		add(buttonPanel, BorderLayout.SOUTH);
 		
+		//button listener
 		do 
 		{
 			ButtonListener listener = new ButtonListener();
