@@ -17,7 +17,7 @@ public class GUi extends JFrame
 	JLabel lblSearchBar = createlabel("Choose an athlete");
 	JComboBox athletes;
 	
-	//Declares check boxes
+	//Declares check box constructors
 	public static JCheckBox FirstName = new JCheckBox("Display the Runner's First Name", true);
 	public static JCheckBox LastName = new JCheckBox("Display the Runner's Last Name", true);
 	public static JCheckBox Nation = new JCheckBox("Display the Runner's Nation of Origin", true);
@@ -145,7 +145,7 @@ public class GUi extends JFrame
 					break;
 					case "Enter":
 					if(athletes.getSelectedIndex() == 0) {
-						System.out.println("Please select a runner first");
+						System.out.println("Please select a runner first.");
 						break;}
 					else {
 						try {
