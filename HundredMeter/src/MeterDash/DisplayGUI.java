@@ -15,7 +15,7 @@ public class DisplayGUI extends JFrame
 {
 	//declares category labels
 	JLabel lblFirstName, lblLastName, lblNation, lblLaneNumber,
-	lblReactionTime, lblFinishTime, lblRanking, lblVoid;
+	lblReactionTime, lblFinishTime, lblRanking, lblVoid, lblSpacing;
 	
 	//declares displayed information
 	JLabel displayFirstName, displayLastName, displayNation,
@@ -24,8 +24,8 @@ public class DisplayGUI extends JFrame
 	String strSpacingTest = "      ";
 	
 	//formats height and width of displayGUI
-	private static final int frame_HEIGHT = 400;
-	private static final int frame_WIDTH = 400;
+	private static final int frame_HEIGHT = 250;
+	private static final int frame_WIDTH = 300;
 	
 	boolean pointer = false;
 	
@@ -44,21 +44,22 @@ public class DisplayGUI extends JFrame
 		lblFinishTime = new JLabel("  Finishing Time:");
 		lblRanking = new JLabel("  Ranking:");
 		lblVoid = new JLabel("");
+		lblSpacing = new JLabel("");
 		
 		//constructs displayed information
 		this.displayFirstName = new JLabel(FirstName + strSpacingTest);	
-		this.displayLastName = new JLabel(LastName);
-		this.displayNation = new JLabel(Nation);
-		this.displayLaneNumber = new JLabel(Integer.toString(LaneNumber));
-		this.displayReactionTime = new JLabel(Double.toString(ReactionTime));
-		this.displayFinishTime = new JLabel(Double.toString(FinishingTime));
-		this.displayRanking = new JLabel(Integer.toString(Ranking));
+		this.displayLastName = new JLabel(LastName + strSpacingTest);
+		this.displayNation = new JLabel(Nation + strSpacingTest);
+		this.displayLaneNumber = new JLabel(Integer.toString(LaneNumber) + strSpacingTest);
+		this.displayReactionTime = new JLabel(Double.toString(ReactionTime) + strSpacingTest);
+		this.displayFinishTime = new JLabel(Double.toString(FinishingTime) + strSpacingTest);
+		this.displayRanking = new JLabel(Integer.toString(Ranking) + strSpacingTest);
 		
 		//sets panel layout
 		JPanel ComboPanel = new JPanel();
-		ComboPanel.setLayout(new GridLayout(7,1));;
+		ComboPanel.setLayout(new GridLayout(8,1));;
 		JPanel DisplayPanel = new JPanel();
-		DisplayPanel.setLayout(new GridLayout(7,1));;
+		DisplayPanel.setLayout(new GridLayout(8,1));;
 		
 		//border layout
 		add(DisplayPanel, BorderLayout.EAST);
@@ -111,18 +112,17 @@ public class DisplayGUI extends JFrame
 			DisplayPanel.add(displayRanking); }
 		else {
 			ComboPanel.add(lblVoid);
-			DisplayPanel.add(lblVoid); }
-		
-		ComboPanel.add(lblVoid);
-		DisplayPanel.add(lblVoid);
+			DisplayPanel.add(lblVoid);}
+				
+			ComboPanel.add(lblSpacing);
+			DisplayPanel.add(lblVoid);
 		
 		
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.setLayout(new GridLayout(1,3));
-		JButton enter = new JButton("Enter");
 		JButton exit = new JButton("Exit");
 		JButton VaA = new JButton("View Another Athlete"); 
-		buttonPanel.add(VaA);
+		//buttonPanel.add(VaA);
 		buttonPanel.add(exit);
 		add(buttonPanel, BorderLayout.SOUTH);
 		
@@ -131,7 +131,7 @@ public class DisplayGUI extends JFrame
 		{
 			ButtonListener listener = new ButtonListener();
 			exit.addActionListener(listener);
-			VaA.addActionListener(listener);
+			//VaA.addActionListener(listener);
 		} while(pointer);
 	}
 	
@@ -147,7 +147,7 @@ public class DisplayGUI extends JFrame
 						dispose();
 						break;
 					case "Exit":
-						System.exit(0);
+						dispose();
 						break;
 				}
 			}
