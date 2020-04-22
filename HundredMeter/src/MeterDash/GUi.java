@@ -139,6 +139,13 @@ public class GUi extends JFrame
 				{
 					case "Clear":
 					athletes.setSelectedIndex(0);
+					FirstName.setSelected(false);
+					LastName.setSelected(false);
+					Nation.setSelected(false);
+					LaneNumber.setSelected(false);
+					ReactionTime.setSelected(false);
+					FinishTime.setSelected(false);
+					Ranking.setSelected(false);
 					break;
 					case "Exit":
 					System.exit(0);

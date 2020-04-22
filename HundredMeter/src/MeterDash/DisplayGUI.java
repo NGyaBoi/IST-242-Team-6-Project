@@ -21,6 +21,8 @@ public class DisplayGUI extends JFrame
 	JLabel displayFirstName, displayLastName, displayNation,
 	displayLaneNumber, displayReactionTime, displayFinishTime, displayRanking;
 	
+	String strSpacingTest = "      ";
+	
 	//formats height and width of displayGUI
 	private static final int frame_HEIGHT = 400;
 	private static final int frame_WIDTH = 400;
@@ -34,17 +36,17 @@ public class DisplayGUI extends JFrame
 		setSize(frame_HEIGHT, frame_WIDTH);
 		
 		//constructs labels
-		lblFirstName = new JLabel("First Name:");	
-		lblLastName = new JLabel("Last Name:");
-		lblNation = new JLabel("Nation:");
-		lblLaneNumber = new JLabel("Lane Number:");
-		lblReactionTime = new JLabel("Reaction Time:");
-		lblFinishTime = new JLabel("Finishing Time:");
-		lblRanking = new JLabel("Ranking:");
+		lblFirstName = new JLabel("  First Name:");	
+		lblLastName = new JLabel("  Last Name:");
+		lblNation = new JLabel("  Nation:");
+		lblLaneNumber = new JLabel("  Lane Number:");
+		lblReactionTime = new JLabel("  Reaction Time:");
+		lblFinishTime = new JLabel("  Finishing Time:");
+		lblRanking = new JLabel("  Ranking:");
 		lblVoid = new JLabel("");
 		
 		//constructs displayed information
-		this.displayFirstName = new JLabel(FirstName);	
+		this.displayFirstName = new JLabel(FirstName + strSpacingTest);	
 		this.displayLastName = new JLabel(LastName);
 		this.displayNation = new JLabel(Nation);
 		this.displayLaneNumber = new JLabel(Integer.toString(LaneNumber));
@@ -110,6 +112,10 @@ public class DisplayGUI extends JFrame
 		else {
 			ComboPanel.add(lblVoid);
 			DisplayPanel.add(lblVoid); }
+		
+		ComboPanel.add(lblVoid);
+		DisplayPanel.add(lblVoid);
+		
 		
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.setLayout(new GridLayout(1,3));
