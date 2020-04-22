@@ -18,13 +18,13 @@ public class GUi extends JFrame
 	JComboBox athletes;
 	
 	//Declares check box constructors
-	public static JCheckBox FirstName = new JCheckBox("Display the Runner's First Name", true);
-	public static JCheckBox LastName = new JCheckBox("Display the Runner's Last Name", true);
-	public static JCheckBox Nation = new JCheckBox("Display the Runner's Nation of Origin", true);
-	public static JCheckBox LaneNumber = new JCheckBox("Display the Lane Number", true);
-	public static JCheckBox ReactionTime = new JCheckBox("Display the Runner's Reaction Time", true);
-	public static JCheckBox FinishTime = new JCheckBox("Display the Finishing Time", true);
-	public static JCheckBox Ranking = new JCheckBox("Display the Runner's Ranking", true);
+	public static JCheckBox FirstName = new JCheckBox("Display the Runner's First Name", false);
+	public static JCheckBox LastName = new JCheckBox("Display the Runner's Last Name", false);
+	public static JCheckBox Nation = new JCheckBox("Display the Runner's Nation of Origin", false);
+	public static JCheckBox LaneNumber = new JCheckBox("Display the Lane Number", false);
+	public static JCheckBox ReactionTime = new JCheckBox("Display the Runner's Reaction Time", false);
+	public static JCheckBox FinishTime = new JCheckBox("Display the Finishing Time", false);
+	public static JCheckBox Ranking = new JCheckBox("Display the Runner's Ranking", false);
 	
 	boolean pointer = false;
 	
