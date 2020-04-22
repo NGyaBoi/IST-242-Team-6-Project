@@ -24,7 +24,7 @@ public class DisplayGUI extends JFrame
 	String strSpacingTest = "      ";
 	
 	//formats height and width of displayGUI
-	private static final int frame_HEIGHT = 250;
+	private static final int frame_HEIGHT = 350;
 	private static final int frame_WIDTH = 300;
 	
 	boolean pointer = false;
