@@ -127,7 +127,7 @@ public class GUi extends JFrame
 		
 		DisplayGUI displayFrame = new DisplayGUI(strFirstName, strLastName, strNation, intRankingNumber, dReactionTime, dFinishTime, intRankingNumber);
 		displayFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		displayFrame.setTitle("Displaying Information");
+		displayFrame.setTitle("Display");
 		displayFrame.setVisible(true);
 	}
 	
