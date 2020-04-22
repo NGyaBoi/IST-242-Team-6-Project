@@ -152,7 +152,7 @@ public class GUi extends JFrame
 					break;
 					case "Enter":
 					if(athletes.getSelectedIndex() == 0) {
-						System.out.println("Please select a runner first.");
+						JOptionPane.showMessageDialog(null, "Please select a runner first.");
 						break;}
 					else {
 						try {
