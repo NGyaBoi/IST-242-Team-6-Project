@@ -62,40 +62,54 @@ public class DisplayGUI extends JFrame
 		add(DisplayPanel, BorderLayout.EAST);
 		add(ComboPanel, BorderLayout.WEST);
 		
-		ComboPanel.add(lblFirstName);
-		if(GUi.FirstName.isSelected()==true)
-			DisplayPanel.add(displayFirstName);
-		else {DisplayPanel.add(lblVoid);}
+		if(GUi.FirstName.isSelected()==true) {
+			ComboPanel.add(lblFirstName);
+			DisplayPanel.add(displayFirstName); }
+		else {
+			ComboPanel.add(lblVoid);
+			DisplayPanel.add(lblVoid); }
 		
-		ComboPanel.add(lblLastName);
-		if(GUi.LastName.isSelected()==true)
-			DisplayPanel.add(displayLastName);
-		else {DisplayPanel.add(lblVoid);}
+		if(GUi.LastName.isSelected()==true) {
+			ComboPanel.add(lblLastName);
+			DisplayPanel.add(displayLastName); }
+		else {
+			ComboPanel.add(lblVoid);
+			DisplayPanel.add(lblVoid); }
 		
-		ComboPanel.add(lblNation);
-		if(GUi.Nation.isSelected()==true)
-			DisplayPanel.add(displayNation);
-		else {DisplayPanel.add(lblVoid);}
+		if(GUi.Nation.isSelected()==true) {
+			ComboPanel.add(lblNation);
+			DisplayPanel.add(displayNation); }
+		else {
+			ComboPanel.add(lblVoid);
+			DisplayPanel.add(lblVoid); }
 		
-		ComboPanel.add(lblLaneNumber);
-		if(GUi.LaneNumber.isSelected()==true)
-			DisplayPanel.add(displayLaneNumber);
-		else {DisplayPanel.add(lblVoid);}
+		if(GUi.LaneNumber.isSelected()==true) {
+			ComboPanel.add(lblLaneNumber);
+			DisplayPanel.add(displayLaneNumber); }
+		else {
+			ComboPanel.add(lblVoid);
+			DisplayPanel.add(lblVoid); }
 		
-		ComboPanel.add(lblReactionTime);
-		if(GUi.ReactionTime.isSelected()==true)
-			DisplayPanel.add(displayReactionTime);
-		else {DisplayPanel.add(lblVoid);}
+		if(GUi.ReactionTime.isSelected()==true) {
+			ComboPanel.add(lblReactionTime);
+			DisplayPanel.add(displayReactionTime); }
+		else {
+			ComboPanel.add(lblVoid);
+			DisplayPanel.add(lblVoid); }
 		
-		ComboPanel.add(lblFinishTime);
-		if(GUi.FinishTime.isSelected()==true)
-			DisplayPanel.add(displayFinishTime);
-		else {DisplayPanel.add(lblVoid);}
+		if(GUi.FinishTime.isSelected()==true) {
+			ComboPanel.add(lblFinishTime);
+			DisplayPanel.add(displayFinishTime); }
+		else {
+			ComboPanel.add(lblVoid);
+			DisplayPanel.add(lblVoid); }
 		
-		ComboPanel.add(lblRanking);
-		if(GUi.Ranking.isSelected()==true)
-			DisplayPanel.add(displayRanking);
-		else {DisplayPanel.add(lblVoid);}
+		if(GUi.Ranking.isSelected()==true) {
+			ComboPanel.add(lblRanking);
+			DisplayPanel.add(displayRanking); }
+		else {
+			ComboPanel.add(lblVoid);
+			DisplayPanel.add(lblVoid); }
 		
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.setLayout(new GridLayout(1,3));
