@@ -51,8 +51,8 @@ public class DisplayGUI extends JFrame
 		this.displayLastName = new JLabel(LastName + strSpacingTest);
 		this.displayNation = new JLabel(Nation + strSpacingTest);
 		this.displayLaneNumber = new JLabel(Integer.toString(LaneNumber) + strSpacingTest);
-		this.displayReactionTime = new JLabel(Double.toString(ReactionTime) + strSpacingTest);
-		this.displayFinishTime = new JLabel(Double.toString(FinishingTime) + strSpacingTest);
+		this.displayReactionTime = new JLabel(Double.toString(ReactionTime) + " seconds" + strSpacingTest);
+		this.displayFinishTime = new JLabel(Double.toString(FinishingTime) + " seconds" + strSpacingTest);
 		this.displayRanking = new JLabel(Integer.toString(Ranking) + strSpacingTest);
 		
 		//sets panel layout
