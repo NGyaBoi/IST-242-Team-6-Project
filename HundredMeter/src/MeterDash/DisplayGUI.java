@@ -17,8 +17,8 @@ public class DisplayGUI extends JFrame
 	JLabel lblFirstName, lblLastName, lblNation, lblLaneNumber, lblReactionTime, lblFinishTime, lblRanking, lblVoid;
 	JLabel displayFirstName, displayLastName, displayNation, displayLaneNumber, displayReactionTime, displayFinishTime, displayRanking;
 	
-	private static final int frame_HEIGHT = 250;
-	private static final int frame_WIDTH = 300;
+	private static final int frame_HEIGHT = 400;
+	private static final int frame_WIDTH = 400;
 	
 	boolean pointer = false;
 	
