@@ -30,7 +30,7 @@ public class DisplayGUI extends JFrame
 	public DisplayGUI(String FirstName, String LastName, String Nation, int LaneNumber, double ReactionTime, double FinishingTime, int Ranking)
 	{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setTitle("Displaying Information");
+		setTitle("Display");
 		setSize(frame_HEIGHT, frame_WIDTH);
 		
 		//constructs labels
