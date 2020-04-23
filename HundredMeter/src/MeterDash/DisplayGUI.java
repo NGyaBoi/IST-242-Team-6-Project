@@ -65,6 +65,9 @@ public class DisplayGUI extends JFrame
 		add(DisplayPanel, BorderLayout.EAST);
 		add(ComboPanel, BorderLayout.WEST);
 		
+		/* displays combo and display panels
+		 * by which checkboxes have been selected
+		 */
 		if(GUi.FirstName.isSelected()==true) {
 			ComboPanel.add(lblFirstName);
 			DisplayPanel.add(displayFirstName); }
@@ -121,8 +124,6 @@ public class DisplayGUI extends JFrame
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.setLayout(new GridLayout(1,3));
 		JButton exit = new JButton("Exit");
-		JButton VaA = new JButton("View Another Athlete"); 
-		//buttonPanel.add(VaA);
 		buttonPanel.add(exit);
 		add(buttonPanel, BorderLayout.SOUTH);
 		
